@@ -1,0 +1,144 @@
+nav{
+    margin-bottom: 50px;
+    position: relative;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 28px;
+    margin-bottom: 50px;
+}
+.list{
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+.left_side{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.left_side .link{
+    border-radius: 5px;
+    border: none;
+    background: #393;
+    padding: 15px 30px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.list .pages a {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    color: black;
+ 
+}
+/* .list .pages a:hover{
+    color: red;
+} */
+.icon{
+    font-size: 25px;
+    color: black;
+}
+.pages{
+    margin-right: 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-self: center;
+}
+.block_icon{
+    display: flex;
+    position: relative;
+}
+.quantity{
+    position: absolute;
+    top: -4px;
+    left: 31px;
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.list .pages a {
+	color: black; /* Цвет обычной ссылки */
+    position: relative;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+.list .pages a:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: black; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.list .pages a:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: red; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+.container .icon_menu:nth-child(3) {
+    border: 1px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: none;
+}
+@media(max-width: 414px){
+    .container .icon_menu:nth-child(3){
+        display: block;
+    }
+    .list{
+        position: absolute;
+        top: 100%;
+        right: 5px;
+        visibility: hidden;
+        width: 378px;
+    }
+    .pages{
+        display: flex;
+        margin: 0;
+    }
+    .block_icon{
+    margin-right: auto;
+    }
+    .container {
+        margin-bottom: 0; /* Изначально margin-bottom: 0; */
+        transition: margin-bottom 0.3s ease; /* Добавьте плавный переход для margin-bottom */
+    }
+
+    /* Стили для активированного меню */
+    .list.active {
+        visibility: visible;
+    }
+
+    /* Примените margin-bottom: 200px при активации .list.active */
+    .list.active ~ .container {
+        margin-bottom: 200px;
+    }
+}
+
+/* .container{
+    transform: translateY(0); 
+    transition: transform 0.3s ease; 
+}
+.list.active{
+    margin-bottom: 200px;
+    transform: translateY(200px); 
+    visibility: visible;
+} */
